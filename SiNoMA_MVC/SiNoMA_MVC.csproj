@@ -100,6 +100,7 @@
     <Compile Include="Models\Ativo.cs" />
     <Compile Include="Models\GrupoAcesso.cs" />
     <Compile Include="Models\Menu.cs" />
+    <Compile Include="Models\Notificacao.cs" />
     <Compile Include="Models\Operacao.cs" />
     <Compile Include="Models\PermissaoAcesso.cs" />
     <Compile Include="Models\PermissaoOperacao.cs" />
