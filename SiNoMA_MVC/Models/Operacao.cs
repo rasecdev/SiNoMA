@@ -6,14 +6,20 @@ using System.Web;
 
 namespace SiNoMA_MVC.Models
 {
-    public class GrupoAcesso
+    public class Operacao
     {
-        public int GrupoID { get; set; }
+        public int OperacaoID { get; set; }
 
         [MaxLength(45)]
         [DataType(DataType.MultilineText)]
         public string Descricao { get; set; }
 
-        public Usuario UsuarioID { get; set; }
+        public int Incluir { get; set; }
+
+        public int Alterar { get; set; }
+
+        public int Excluir { get; set; }
+
+        public int Visualizar { get; set; }
     }
 }
