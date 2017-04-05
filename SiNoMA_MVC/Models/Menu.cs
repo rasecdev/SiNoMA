@@ -11,7 +11,6 @@ namespace SiNoMA_MVC.Models
         public int MenuID { get; set; }
 
         [MaxLength(45)]
-        [DataType(DataType.MultilineText)]
         public string Descricao { get; set; }
 
         [MaxLength(150)]
