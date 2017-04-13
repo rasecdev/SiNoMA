@@ -8,20 +8,20 @@ namespace SiNoMA_MVC.Models
 {
     public class Notificacao
     {
-        public int NOTI_ID { get; set; }
+        public int ID { get; set; }
 
-        public string NOTI_Nome { get; set; }
+        public string Nome { get; set; }
 
-        public int NOTI_TipoEnvio { get; set; }
+        public int TipoEnvio { get; set; }
 
         [DataType(DataType.DateTime)]
-        public DateTime NOTI_DataParaEnvio { get; set; }
+        public DateTime DataParaEnvio { get; set; }
 
-        public int NOTI_Repeticao { get; set; }
+        public int Repeticao { get; set; }
 
-        public string NOTI_Mensagem { get; set; }
+        public string Mensagem { get; set; }
 
-        public byte NOTI_StatusEnvio { get; set; }
+        public byte StatusEnvio { get; set; }
 
         public byte StatusRecebido { get; set; }
     }
