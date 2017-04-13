@@ -8,13 +8,13 @@ namespace SiNoMA_MVC.Models
 {
     public class Ativo
     {
-        public int ATIV_ID { get; set; }
+        public int ID { get; set; }
 
-        public string ATIV_Nome { get; set; }
+        public string Nome { get; set; }
 
         [MaxLength(45)]
         [DataType(DataType.MultilineText)]
-        public string ATIV_Descricaos { get; set; }
+        public string Descricaos { get; set; }
 
     }
 }
