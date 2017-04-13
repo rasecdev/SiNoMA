@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Web;
 
 namespace SiNoMA_MVC.Models
 {
@@ -14,7 +10,6 @@ namespace SiNoMA_MVC.Models
 
         public int TipoEnvio { get; set; }
 
-        [DataType(DataType.DateTime)]
         public DateTime DataParaEnvio { get; set; }
 
         public int Repeticao { get; set; }
