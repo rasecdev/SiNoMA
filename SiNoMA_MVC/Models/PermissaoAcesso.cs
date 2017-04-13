@@ -2,7 +2,7 @@
 {
     public class PermissaoAcesso
     {
-        public int PermissaoID { get; set; }
+        public int PID { get; set; }
 
         public int SituacaoID { get; set; }
 

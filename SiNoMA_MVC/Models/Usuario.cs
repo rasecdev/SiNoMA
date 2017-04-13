@@ -4,7 +4,7 @@ namespace SiNoMA_MVC.Models
 {
     public class Usuario
     {
-        public int UsuarioID { get; set; }
+        public int ID { get; set; }
 
         public string Login { get; set; }
 
