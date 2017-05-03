@@ -1,4 +1,4 @@
-﻿namespace SiNoMA_MVC.Models
+﻿namespace SiNoMA.Domain
 {
     public class Ativo
     {
@@ -6,7 +6,7 @@
 
         public string Nome { get; set; }
 
-        public string Descricaos { get; set; }
+        public string Descricao { get; set; }
 
     }
 }
