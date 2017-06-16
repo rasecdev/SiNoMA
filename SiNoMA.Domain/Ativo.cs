@@ -6,7 +6,7 @@
 
         public string Nome { get; set; }
 
-        public string Descricaos { get; set; }
+        public string Descrisao { get; set; }
 
     }
 }
