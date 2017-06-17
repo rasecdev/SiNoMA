@@ -48,6 +48,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Mappings\AtivoMapping.cs" />
+    <Compile Include="Mappings\NotificacaoMapping.cs" />
+    <Compile Include="Mappings\UsuarioMapping.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
