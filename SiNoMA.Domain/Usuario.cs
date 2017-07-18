@@ -15,8 +15,7 @@ namespace SiNoMA.Domain
         public string Email { get; set; }
 
         public int Situacao { get; set; }
-
-
+        
         public int Administrador { get; set; }
 
     }

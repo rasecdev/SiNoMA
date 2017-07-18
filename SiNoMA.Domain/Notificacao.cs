@@ -1,10 +1,15 @@
-﻿using System;
+﻿using SiNoMA_MVC.Models;
+using System;
 
 namespace SiNoMA.Domain
 {
     public class Notificacao
     {
         public int ID { get; set; }
+
+        public Usuario Usuario { get; set; }
+
+        public Ativo Ativo { get; set; }
 
         public string Nome { get; set; }
 
