@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace SiNoMA_MVC.Models
+namespace SiNoMA.Domain
 {
     public class Usuario
     {
@@ -15,6 +15,7 @@ namespace SiNoMA_MVC.Models
         public string Email { get; set; }
 
         public int Situacao { get; set; }
+
 
         public int Administrador { get; set; }
 

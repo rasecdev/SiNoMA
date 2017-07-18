@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace SiNoMA_MVC.Models
+namespace SiNoMA.Domain
 {
     public class Notificacao
     {
@@ -16,8 +16,8 @@ namespace SiNoMA_MVC.Models
 
         public string Mensagem { get; set; }
 
-        public byte StatusEnvio { get; set; }
+        public Boolean StatusEnvio { get; set; }
 
-        public byte StatusRecebido { get; set; }
+        public Boolean StatusRecebido { get; set; }
     }
 }

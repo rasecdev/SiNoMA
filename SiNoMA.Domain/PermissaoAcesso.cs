@@ -1,4 +1,4 @@
-﻿namespace SiNoMA_MVC.Models
+﻿namespace SiNoMA.Domain
 {
     public class PermissaoAcesso
     {
