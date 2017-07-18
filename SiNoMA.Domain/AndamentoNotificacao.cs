@@ -12,6 +12,6 @@ namespace SiNoMA.Domain
 
         public bool Enviada { get; set; }
 
-        public bool Recebida { get; set; }
+        public bool Recebida { get; set; } 
     }
 }
