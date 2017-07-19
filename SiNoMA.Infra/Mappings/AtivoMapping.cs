@@ -1,4 +1,4 @@
-﻿using SiNoMA_MVC.Models;
+﻿using SiNoMA.Domain;
 using System.Data.Entity.ModelConfiguration;
 
 namespace SiNoMA.Infra.Mappings

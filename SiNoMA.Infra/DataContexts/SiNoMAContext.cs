@@ -1,6 +1,6 @@
 ﻿using SiNoMA.Domain;
 using SiNoMA.Infra.Mappings;
-using SiNoMA_MVC.Models;
+using SiNoMA.Domain;
 using System.Data.Entity;
 
 namespace SiNoMA.Infra.DataContexts
@@ -37,7 +37,7 @@ namespace SiNoMA.Infra.DataContexts
             base.OnModelCreating(modelBuilder);
         }
 
-        public System.Data.Entity.DbSet<SiNoMA_MVC.Models.Ativo> Ativoes { get; set; }
+        public System.Data.Entity.DbSet<SiNoMA.Domain.Ativo> Ativoes { get; set; }
 
         public System.Data.Entity.DbSet<SiNoMA.Domain.Notificacao> Notificacaos { get; set; }
     }
