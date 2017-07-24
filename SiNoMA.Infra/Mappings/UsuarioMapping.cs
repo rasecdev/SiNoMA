@@ -7,45 +7,57 @@ namespace SiNoMA.Infra.Mappings
     {
         public UsuarioMapping()
         {
-            //Inforam qual será o nome da tabela.
+            // define o nome da tabela
             ToTable("Usuario");
+            
+            // define o nome da coluna da tabela
+            // define que a coluna seja autoincremente
+            Property(x => x.ID)
+                .HasColumnName("USUA_ID")
+                .HasDatabaseGeneratedOption(System.ComponentModel.DataAnnotations.Schema.DatabaseGeneratedOption.Identity);
 
-            //Informa qual será a chave primária.
+            // define a chave primária
             HasKey(x => x.ID);
 
-            //Muda o nome do parâmetro na base de dados.
-            Property(x => x.ID)
-                .HasColumnName("USER_ID");
+            // define o nome da coluna da tabela
+            // define tamanho máximo do campo
+            // define que o campo é obrigatório
+            Property(x => x.Nome)
+                .HasColumnName("USUA_Nome")
+                .HasMaxLength(60)
+                .IsRequired();
 
-            //Informa as características para a propriedade ter no máximo 40 caracteres e é obrigatória e Muança no Nome.                        
+            // define o nome da coluna da tabela
+            // define tamanho máximo do campo
+            // define que o campo é obrigatório
             Property(x => x.Login)
+                .HasColumnName("USUA_Login")
                 .HasMaxLength(40)
-                .IsRequired()
-                .HasColumnName("USER_Login");
+                .IsRequired();
 
-            //Informa as características para a propriedade ter no máximo 40 caracteres e é obrigatória e Muança no Nome.            
+            // define o nome da coluna da tabela
+            // define tamanho máximo do campo
+            // define que o campo é obrigatório
             Property(x => x.Senha)
+                .HasColumnName("USUA_Senha")
                 .HasMaxLength(30)
-                .IsRequired()
-               .HasColumnName("USER_Senha");
+                .IsRequired();
 
-            //Muda o nome do parâmetro na base de dados.
-            Property(x => x.UltimoAcesso)
-                .HasColumnName("USER_UltimoAcesso");
+            // relacionamento N:N, sendo um usuario possui N notificações, 
+            // e uma notificação pode ser de um ou mais usuarios
+            //HasMany(x => x.Notificacoes)
+            //    .WithMany()
+            //    .Map(m =>
+            //    {
+            //        m.MapLeftKey("USER_ID");
+            //        m.MapRightKey("NOTI_ID");
+            //        m.ToTable("UsuarioNotificacao");
+            //    });
 
-            //Informa as características para a propriedade ter no máximo 40 caracteres e é obrigatória e Muança no Nome.            
-            Property(x => x.Email)
-                .HasMaxLength(40)
-                .IsRequired()
-                .HasColumnName("USER_Email");
-
-            //Muda o nome do parâmetro na base de dados.
-            Property(x => x.Situacao)
-                .HasColumnName("USER_Situacao");
-
-            //Muda o nome do parâmetro na base de dados.
-            Property(x => x.Administrador)
-                .HasColumnName("USER_Administrador");
+            //HasMany(x => x.Emails)
+            //    .WithOptional()
+            //    .Map(m => m.MapKey("USER_ID"));
+            
         }
     }
 }

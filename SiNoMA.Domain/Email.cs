@@ -1,10 +1,9 @@
 ﻿namespace SiNoMA.Domain
 {
-    public class Ativo
+    public class Email
     {
         public long ID { get; set; }
-        public string Nome { get; set; }
-        public string Descricao { get; set; }
+        public string DescricaoEmail { get; set; }
         public virtual Usuario Usuario { get; set; }
     }
 }

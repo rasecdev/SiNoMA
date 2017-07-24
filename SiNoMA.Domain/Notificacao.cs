@@ -1,28 +1,26 @@
-﻿using SiNoMA.Domain;
-using System;
+﻿using System;
+using System.Collections.Generic;
 
 namespace SiNoMA.Domain
 {
     public class Notificacao
     {
-        public int ID { get; set; }
+        public Notificacao()
+        {
+            Ativo = new Ativo();
+            Usuario = new Usuario();
+            TipoEnvio = new TipoEnvio();
+        }
 
-        public Usuario Usuario { get; set; }
-
-        public Ativo Ativo { get; set; }
-
+        public long ID { get; set; }
         public string Nome { get; set; }
-
-        public int TipoEnvio { get; set; }
-
+        public virtual TipoEnvio TipoEnvio { get; set; }
         public DateTime DataParaEnvio { get; set; }
-
-        public int Repeticao { get; set; }
-
+        public string Repeticao { get; set; }
         public string Mensagem { get; set; }
-
-        public Boolean StatusEnvio { get; set; }
-
-        public Boolean StatusRecebido { get; set; }
+        public bool NotificacaoAtiva { get; set; }
+        public virtual Ativo Ativo { get; set; }
+        public virtual Usuario Usuario { get; set; }
+        public virtual ICollection<AndamentoNotificacao> AndamentosNotificacoes { get; set; }
     }
 }
