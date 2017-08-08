@@ -42,12 +42,8 @@
   <ItemGroup>
     <Compile Include="AndamentoNotificacao.cs" />
     <Compile Include="Ativo.cs" />
-    <Compile Include="GrupoAcesso.cs" />
-    <Compile Include="Menu.cs" />
+    <Compile Include="Email.cs" />
     <Compile Include="Notificacao.cs" />
-    <Compile Include="Operacao.cs" />
-    <Compile Include="PermissaoAcesso.cs" />
-    <Compile Include="PermissaoOperacao.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TipoEnvio.cs" />
     <Compile Include="Usuario.cs" />

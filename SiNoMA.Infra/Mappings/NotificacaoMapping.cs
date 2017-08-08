@@ -3,52 +3,69 @@ using System.Data.Entity.ModelConfiguration;
 
 namespace SiNoMA.Infra.Mappings
 {
-    class NotificacaoMapping : EntityTypeConfiguration<Notificacao>
+    public class NotificacaoMapping : EntityTypeConfiguration<Notificacao>
     {
         public NotificacaoMapping()
         {
-            //Inforam qual será o nome da tabela.
+            // define o nome da tabela
             ToTable("Notificacao");
 
-            //Informa qual será a chave primária.
+            // define o nome da coluna da tabela
+            // define que a coluna seja autoincremente
+            Property(x => x.ID)
+                .HasColumnName("NOTI_ID")
+                .HasDatabaseGeneratedOption(System.ComponentModel.DataAnnotations.Schema.DatabaseGeneratedOption.Identity);
+
+            // define a chave primária
             HasKey(x => x.ID);
 
-            //Muda o nome do parâmetro na base de dados.
-            Property(x => x.ID)
-                .HasColumnName("NOTI_ID");
-
-            //Informa as características para a propriedade ter no máximo 40 caracteres e é obrigatória e Muança no Nome.            
+            // define o nome da coluna da tabela
+            // define tamanho máximo do campo
+            // define que o campo é obrigatório
             Property(x => x.Nome)
+                .HasColumnName("NOTI_Nome")
                 .HasMaxLength(50)
-                .IsRequired()
-                .HasColumnName("NOTI_Nome");
+                .IsRequired();
 
-            //Muda o nome do parâmetro na base de dados.
-            Property(x => x.TipoEnvio)
-                .HasColumnName("NOTI_TipoEnvio");
-
-            //Muda o nome do parâmetro na base de dados.
+            // define o nome da coluna da tabela
+            // define que o campo é obrigatório
             Property(x => x.DataParaEnvio)
-                .HasColumnName("NOTI_DataParaEnvio");
+                .HasColumnName("NOTI_DataParaEnvio")
+                .IsRequired();
 
-            //Muda o nome do parâmetro na base de dados.
+            // define o nome da coluna da tabela
+            // defini o tipo da coluna como char
+            // define que o campo é obrigatório   
             Property(x => x.Repeticao)
-                .HasColumnName("NOTI_Repeticao");
+                .HasColumnName("NOTI_Repeticao")
+                .HasColumnType("char")
+                .HasMaxLength(2)
+                .IsRequired();
 
-            //Informa as características para a propriedade ter no máximo 40 caracteres e é obrigatória e Muança no Nome.            
+            // define o nome da coluna da tabela
+            // define tamanho máximo do campo
+            // define que o campo é obrigatório   
             Property(x => x.Mensagem)
-                .HasMaxLength(200)
-                .IsRequired()
-                .HasColumnName("NOTI_Mensagem");
+                .HasColumnName("NOTI_Mensagem")
+                .HasMaxLength(400)
+                .IsRequired();
 
-            //Muda o nome do parâmetro na base de dados.
-            Property(x => x.StatusEnvio)
-                .HasColumnName("NOTI_StatusEnvio");
+            // define o nome da coluna da tabela
+            Property(x => x.NotificacaoAtiva)
+                .HasColumnName("NOTI_NotificacaoAtiva");
 
-            //Muda o nome do parâmetro na base de dados.
-            Property(x => x.StatusRecebido)
-                .HasColumnName("NOTI_StatusRecebido");
+            // define um relacionamento deste tipo de entidade, neste caso é o Usuario
+            HasRequired(x => x.Usuario) // uma Notificacao deve ter um Usuario associado a ele
+                .WithMany(n => n.Notificacoes) // um Usuario pode ter muitas Notificações
+                .Map(m => m.MapKey("USUA_ID")); // especifica o nome da coluna de chave estrangeira na tabela Notificação
 
+            HasRequired(x => x.TipoEnvio)
+                .WithMany()
+                .Map(m => m.MapKey("TIEN_ID")); // especifica o nome da coluna de chave estrangeira na tabela TipoEnvio
+
+            HasRequired(x => x.Ativo)
+                .WithMany()
+                .Map(m => m.MapKey("ATIV_ID")); // especifica o nome da coluna de chave estrangeira na tabela Ativo
         }
     }
 }
