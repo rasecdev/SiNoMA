@@ -1,4 +1,4 @@
-﻿@model SiNoMA.Domain.Usuario
+﻿@model SiNoMA.Domain.Email
 
 @{
     ViewBag.Title = "Delete";
@@ -8,31 +8,15 @@
 
 <h3>Are you sure you want to delete this?</h3>
 <div>
-    <h4>Usuario</h4>
+    <h4>Email</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.Nome)
+            @Html.DisplayNameFor(model => model.DescricaoEmail)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Nome)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Login)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Login)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Senha)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Senha)
+            @Html.DisplayFor(model => model.DescricaoEmail)
         </dd>
 
     </dl>

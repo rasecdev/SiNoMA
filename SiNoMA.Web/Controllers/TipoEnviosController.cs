@@ -11,107 +11,107 @@ using SiNoMA.Infra.DataContexts;
 
 namespace SiNoMA.Web.Controllers
 {
-    public class UsuariosController : Controller
+    public class TipoEnviosController : Controller
     {
         private SiNoMAContext db = new SiNoMAContext();
 
-        // GET: Usuarios
+        // GET: TipoEnvios
         public ActionResult Index()
         {
-            return View(db.Usuarios.ToList());
+            return View(db.TipoEnvios.ToList());
         }
 
-        // GET: Usuarios/Details/5
-        public ActionResult Details(long? id)
+        // GET: TipoEnvios/Details/5
+        public ActionResult Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Usuario usuario = db.Usuarios.Find(id);
-            if (usuario == null)
+            TipoEnvio tipoEnvio = db.TipoEnvios.Find(id);
+            if (tipoEnvio == null)
             {
                 return HttpNotFound();
             }
-            return View(usuario);
+            return View(tipoEnvio);
         }
 
-        // GET: Usuarios/Create
+        // GET: TipoEnvios/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: Usuarios/Create
+        // POST: TipoEnvios/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ID,Nome,Login,Senha")] Usuario usuario)
+        public ActionResult Create([Bind(Include = "ID,Nome,Descricao")] TipoEnvio tipoEnvio)
         {
             if (ModelState.IsValid)
             {
-                db.Usuarios.Add(usuario);
+                db.TipoEnvios.Add(tipoEnvio);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            return View(usuario);
+            return View(tipoEnvio);
         }
 
-        // GET: Usuarios/Edit/5
-        public ActionResult Edit(long? id)
+        // GET: TipoEnvios/Edit/5
+        public ActionResult Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Usuario usuario = db.Usuarios.Find(id);
-            if (usuario == null)
+            TipoEnvio tipoEnvio = db.TipoEnvios.Find(id);
+            if (tipoEnvio == null)
             {
                 return HttpNotFound();
             }
-            return View(usuario);
+            return View(tipoEnvio);
         }
 
-        // POST: Usuarios/Edit/5
+        // POST: TipoEnvios/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "ID,Nome,Login,Senha")] Usuario usuario)
+        public ActionResult Edit([Bind(Include = "ID,Nome,Descricao")] TipoEnvio tipoEnvio)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(usuario).State = EntityState.Modified;
+                db.Entry(tipoEnvio).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(usuario);
+            return View(tipoEnvio);
         }
 
-        // GET: Usuarios/Delete/5
-        public ActionResult Delete(long? id)
+        // GET: TipoEnvios/Delete/5
+        public ActionResult Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Usuario usuario = db.Usuarios.Find(id);
-            if (usuario == null)
+            TipoEnvio tipoEnvio = db.TipoEnvios.Find(id);
+            if (tipoEnvio == null)
             {
                 return HttpNotFound();
             }
-            return View(usuario);
+            return View(tipoEnvio);
         }
 
-        // POST: Usuarios/Delete/5
+        // POST: TipoEnvios/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(long id)
+        public ActionResult DeleteConfirmed(int id)
         {
-            Usuario usuario = db.Usuarios.Find(id);
-            db.Usuarios.Remove(usuario);
+            TipoEnvio tipoEnvio = db.TipoEnvios.Find(id);
+            db.TipoEnvios.Remove(tipoEnvio);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

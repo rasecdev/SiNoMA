@@ -11,107 +11,107 @@ using SiNoMA.Infra.DataContexts;
 
 namespace SiNoMA.Web.Controllers
 {
-    public class UsuariosController : Controller
+    public class AtivosController : Controller
     {
         private SiNoMAContext db = new SiNoMAContext();
 
-        // GET: Usuarios
+        // GET: Ativoes
         public ActionResult Index()
         {
-            return View(db.Usuarios.ToList());
+            return View(db.Ativoes.ToList());
         }
 
-        // GET: Usuarios/Details/5
+        // GET: Ativoes/Details/5
         public ActionResult Details(long? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Usuario usuario = db.Usuarios.Find(id);
-            if (usuario == null)
+            Ativo ativo = db.Ativoes.Find(id);
+            if (ativo == null)
             {
                 return HttpNotFound();
             }
-            return View(usuario);
+            return View(ativo);
         }
 
-        // GET: Usuarios/Create
+        // GET: Ativoes/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: Usuarios/Create
+        // POST: Ativoes/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ID,Nome,Login,Senha")] Usuario usuario)
+        public ActionResult Create([Bind(Include = "ID,Nome,Descricao")] Ativo ativo)
         {
             if (ModelState.IsValid)
             {
-                db.Usuarios.Add(usuario);
+                db.Ativoes.Add(ativo);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            return View(usuario);
+            return View(ativo);
         }
 
-        // GET: Usuarios/Edit/5
+        // GET: Ativoes/Edit/5
         public ActionResult Edit(long? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Usuario usuario = db.Usuarios.Find(id);
-            if (usuario == null)
+            Ativo ativo = db.Ativoes.Find(id);
+            if (ativo == null)
             {
                 return HttpNotFound();
             }
-            return View(usuario);
+            return View(ativo);
         }
 
-        // POST: Usuarios/Edit/5
+        // POST: Ativoes/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "ID,Nome,Login,Senha")] Usuario usuario)
+        public ActionResult Edit([Bind(Include = "ID,Nome,Descricao")] Ativo ativo)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(usuario).State = EntityState.Modified;
+                db.Entry(ativo).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(usuario);
+            return View(ativo);
         }
 
-        // GET: Usuarios/Delete/5
+        // GET: Ativoes/Delete/5
         public ActionResult Delete(long? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Usuario usuario = db.Usuarios.Find(id);
-            if (usuario == null)
+            Ativo ativo = db.Ativoes.Find(id);
+            if (ativo == null)
             {
                 return HttpNotFound();
             }
-            return View(usuario);
+            return View(ativo);
         }
 
-        // POST: Usuarios/Delete/5
+        // POST: Ativoes/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(long id)
         {
-            Usuario usuario = db.Usuarios.Find(id);
-            db.Usuarios.Remove(usuario);
+            Ativo ativo = db.Ativoes.Find(id);
+            db.Ativoes.Remove(ativo);
             db.SaveChanges();
             return RedirectToAction("Index");
         }
