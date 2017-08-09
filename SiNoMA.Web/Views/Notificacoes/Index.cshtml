@@ -1,4 +1,4 @@
-﻿@model IEnumerable<SiNoMA.Domain.Usuario>
+﻿@model IEnumerable<SiNoMA.Domain.Notificacao>
 
 @{
     ViewBag.Title = "Index";
@@ -15,10 +15,16 @@
             @Html.DisplayNameFor(model => model.Nome)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Login)
+            @Html.DisplayNameFor(model => model.DataParaEnvio)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Senha)
+            @Html.DisplayNameFor(model => model.Repeticao)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Mensagem)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NotificacaoAtiva)
         </th>
         <th></th>
     </tr>
@@ -29,10 +35,16 @@
             @Html.DisplayFor(modelItem => item.Nome)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Login)
+            @Html.DisplayFor(modelItem => item.DataParaEnvio)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Senha)
+            @Html.DisplayFor(modelItem => item.Repeticao)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Mensagem)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NotificacaoAtiva)
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |

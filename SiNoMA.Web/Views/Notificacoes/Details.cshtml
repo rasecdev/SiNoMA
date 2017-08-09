@@ -1,0 +1,58 @@
+﻿@model SiNoMA.Domain.Notificacao
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Notificacao</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Nome)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nome)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DataParaEnvio)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DataParaEnvio)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Repeticao)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Repeticao)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Mensagem)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Mensagem)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NotificacaoAtiva)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NotificacaoAtiva)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

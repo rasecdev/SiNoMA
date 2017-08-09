@@ -11,107 +11,107 @@ using SiNoMA.Infra.DataContexts;
 
 namespace SiNoMA.Web.Controllers
 {
-    public class UsuariosController : Controller
+    public class EmailsController : Controller
     {
         private SiNoMAContext db = new SiNoMAContext();
 
-        // GET: Usuarios
+        // GET: Emails
         public ActionResult Index()
         {
-            return View(db.Usuarios.ToList());
+            return View(db.Emails.ToList());
         }
 
-        // GET: Usuarios/Details/5
+        // GET: Emails/Details/5
         public ActionResult Details(long? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Usuario usuario = db.Usuarios.Find(id);
-            if (usuario == null)
+            Email email = db.Emails.Find(id);
+            if (email == null)
             {
                 return HttpNotFound();
             }
-            return View(usuario);
+            return View(email);
         }
 
-        // GET: Usuarios/Create
+        // GET: Emails/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: Usuarios/Create
+        // POST: Emails/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ID,Nome,Login,Senha")] Usuario usuario)
+        public ActionResult Create([Bind(Include = "ID,DescricaoEmail")] Email email)
         {
             if (ModelState.IsValid)
             {
-                db.Usuarios.Add(usuario);
+                db.Emails.Add(email);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            return View(usuario);
+            return View(email);
         }
 
-        // GET: Usuarios/Edit/5
+        // GET: Emails/Edit/5
         public ActionResult Edit(long? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Usuario usuario = db.Usuarios.Find(id);
-            if (usuario == null)
+            Email email = db.Emails.Find(id);
+            if (email == null)
             {
                 return HttpNotFound();
             }
-            return View(usuario);
+            return View(email);
         }
 
-        // POST: Usuarios/Edit/5
+        // POST: Emails/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "ID,Nome,Login,Senha")] Usuario usuario)
+        public ActionResult Edit([Bind(Include = "ID,DescricaoEmail")] Email email)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(usuario).State = EntityState.Modified;
+                db.Entry(email).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(usuario);
+            return View(email);
         }
 
-        // GET: Usuarios/Delete/5
+        // GET: Emails/Delete/5
         public ActionResult Delete(long? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Usuario usuario = db.Usuarios.Find(id);
-            if (usuario == null)
+            Email email = db.Emails.Find(id);
+            if (email == null)
             {
                 return HttpNotFound();
             }
-            return View(usuario);
+            return View(email);
         }
 
-        // POST: Usuarios/Delete/5
+        // POST: Emails/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(long id)
         {
-            Usuario usuario = db.Usuarios.Find(id);
-            db.Usuarios.Remove(usuario);
+            Email email = db.Emails.Find(id);
+            db.Emails.Remove(email);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

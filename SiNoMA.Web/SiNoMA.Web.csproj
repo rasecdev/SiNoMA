@@ -118,6 +118,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AndamentoNotificacoesController.cs" />
+    <Compile Include="Controllers\AtivosController.cs" />
+    <Compile Include="Controllers\EmailsController.cs" />
+    <Compile Include="Controllers\NotificacoesController.cs" />
+    <Compile Include="Controllers\TipoEnviosController.cs" />
+    <Compile Include="Controllers\UsuariosController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -129,6 +135,36 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
+    <Content Include="Views\Ativos\Create.cshtml" />
+    <Content Include="Views\Ativos\Delete.cshtml" />
+    <Content Include="Views\Ativos\Details.cshtml" />
+    <Content Include="Views\Ativos\Edit.cshtml" />
+    <Content Include="Views\Ativos\Index.cshtml" />
+    <Content Include="Views\AndamentoNotificacoes\Create.cshtml" />
+    <Content Include="Views\AndamentoNotificacoes\Delete.cshtml" />
+    <Content Include="Views\AndamentoNotificacoes\Details.cshtml" />
+    <Content Include="Views\AndamentoNotificacoes\Edit.cshtml" />
+    <Content Include="Views\AndamentoNotificacoes\Index.cshtml" />
+    <Content Include="Views\Emails\Create.cshtml" />
+    <Content Include="Views\Emails\Delete.cshtml" />
+    <Content Include="Views\Emails\Details.cshtml" />
+    <Content Include="Views\Emails\Edit.cshtml" />
+    <Content Include="Views\Emails\Index.cshtml" />
+    <Content Include="Views\Notificacoes\Create.cshtml" />
+    <Content Include="Views\Notificacoes\Delete.cshtml" />
+    <Content Include="Views\Notificacoes\Details.cshtml" />
+    <Content Include="Views\Notificacoes\Edit.cshtml" />
+    <Content Include="Views\Notificacoes\Index.cshtml" />
+    <Content Include="Views\TipoEnvios\Create.cshtml" />
+    <Content Include="Views\TipoEnvios\Delete.cshtml" />
+    <Content Include="Views\TipoEnvios\Details.cshtml" />
+    <Content Include="Views\TipoEnvios\Edit.cshtml" />
+    <Content Include="Views\TipoEnvios\Index.cshtml" />
+    <Content Include="Views\Usuarios\Create.cshtml" />
+    <Content Include="Views\Usuarios\Delete.cshtml" />
+    <Content Include="Views\Usuarios\Details.cshtml" />
+    <Content Include="Views\Usuarios\Edit.cshtml" />
+    <Content Include="Views\Usuarios\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -138,7 +174,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Controllers\" />
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>

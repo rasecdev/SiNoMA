@@ -59,5 +59,13 @@ namespace SiNoMA.Infra.DataContexts
             modelBuilder.Configurations.Add(new EmailMapping());
             //base.OnModelCreating(modelBuilder);
         }
+
+        public System.Data.Entity.DbSet<SiNoMA.Domain.Ativo> Ativoes { get; set; }
+
+        public System.Data.Entity.DbSet<SiNoMA.Domain.AndamentoNotificacao> AndamentoNotificacaos { get; set; }
+
+        public System.Data.Entity.DbSet<SiNoMA.Domain.Notificacao> Notificacaos { get; set; }
+
+        public System.Data.Entity.DbSet<SiNoMA.Domain.TipoEnvio> TipoEnvios { get; set; }
     }
 }

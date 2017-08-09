@@ -11,107 +11,107 @@ using SiNoMA.Infra.DataContexts;
 
 namespace SiNoMA.Web.Controllers
 {
-    public class UsuariosController : Controller
+    public class AndamentoNotificacoesController : Controller
     {
         private SiNoMAContext db = new SiNoMAContext();
 
-        // GET: Usuarios
+        // GET: AndamentoNotificacoes
         public ActionResult Index()
         {
-            return View(db.Usuarios.ToList());
+            return View(db.AndamentoNotificacaos.ToList());
         }
 
-        // GET: Usuarios/Details/5
+        // GET: AndamentoNotificacoes/Details/5
         public ActionResult Details(long? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Usuario usuario = db.Usuarios.Find(id);
-            if (usuario == null)
+            AndamentoNotificacao andamentoNotificacao = db.AndamentoNotificacaos.Find(id);
+            if (andamentoNotificacao == null)
             {
                 return HttpNotFound();
             }
-            return View(usuario);
+            return View(andamentoNotificacao);
         }
 
-        // GET: Usuarios/Create
+        // GET: AndamentoNotificacoes/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: Usuarios/Create
+        // POST: AndamentoNotificacoes/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ID,Nome,Login,Senha")] Usuario usuario)
+        public ActionResult Create([Bind(Include = "ID,Descricao,DataHora")] AndamentoNotificacao andamentoNotificacao)
         {
             if (ModelState.IsValid)
             {
-                db.Usuarios.Add(usuario);
+                db.AndamentoNotificacaos.Add(andamentoNotificacao);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            return View(usuario);
+            return View(andamentoNotificacao);
         }
 
-        // GET: Usuarios/Edit/5
+        // GET: AndamentoNotificacoes/Edit/5
         public ActionResult Edit(long? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Usuario usuario = db.Usuarios.Find(id);
-            if (usuario == null)
+            AndamentoNotificacao andamentoNotificacao = db.AndamentoNotificacaos.Find(id);
+            if (andamentoNotificacao == null)
             {
                 return HttpNotFound();
             }
-            return View(usuario);
+            return View(andamentoNotificacao);
         }
 
-        // POST: Usuarios/Edit/5
+        // POST: AndamentoNotificacoes/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "ID,Nome,Login,Senha")] Usuario usuario)
+        public ActionResult Edit([Bind(Include = "ID,Descricao,DataHora")] AndamentoNotificacao andamentoNotificacao)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(usuario).State = EntityState.Modified;
+                db.Entry(andamentoNotificacao).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(usuario);
+            return View(andamentoNotificacao);
         }
 
-        // GET: Usuarios/Delete/5
+        // GET: AndamentoNotificacoes/Delete/5
         public ActionResult Delete(long? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Usuario usuario = db.Usuarios.Find(id);
-            if (usuario == null)
+            AndamentoNotificacao andamentoNotificacao = db.AndamentoNotificacaos.Find(id);
+            if (andamentoNotificacao == null)
             {
                 return HttpNotFound();
             }
-            return View(usuario);
+            return View(andamentoNotificacao);
         }
 
-        // POST: Usuarios/Delete/5
+        // POST: AndamentoNotificacoes/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(long id)
         {
-            Usuario usuario = db.Usuarios.Find(id);
-            db.Usuarios.Remove(usuario);
+            AndamentoNotificacao andamentoNotificacao = db.AndamentoNotificacaos.Find(id);
+            db.AndamentoNotificacaos.Remove(andamentoNotificacao);
             db.SaveChanges();
             return RedirectToAction("Index");
         }
